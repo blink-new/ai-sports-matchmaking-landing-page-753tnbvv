@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import HowItWorks from './components/HowItWorks'
 import AIMatchmaking from './components/AIMatchmaking'
@@ -51,14 +52,27 @@ function App() {
 
   return (
     <div ref={appRef} className="min-h-screen bg-white overflow-x-hidden">
-      <HeroSection />
-      <HowItWorks />
-      <AIMatchmaking />
-      <SmartScheduling />
-      <CommunityEvents />
-      <WhyMontreal />
+      <Navbar />
+      <section id="hero">
+        <HeroSection />
+      </section>
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
+      <section id="features">
+        <AIMatchmaking />
+        <SmartScheduling />
+      </section>
+      <section id="community">
+        <CommunityEvents />
+      </section>
+      <section id="montreal">
+        <WhyMontreal />
+      </section>
       <Testimonials />
-      <CallToAction />
+      <section id="cta">
+        <CallToAction />
+      </section>
       <Footer />
     </div>
   )
